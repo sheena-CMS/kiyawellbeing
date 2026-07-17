@@ -23,15 +23,19 @@
   --teal-bright:#2ECC9A;
   --teal-deep:#1B6B5A;
   --accent:var(--teal-deep);
-  --accent-strong:#145040;
-  --ink:#1d1d1f;
+  --ink:#2C2118;
+  --brown-card:#3D3025;
+  --brown-mid:#4A3B2E;
   --warm:#F4F0EB;
   --white:#ffffff;
-  --muted:#5a5a5e;
-  --faint:#8a8a8f;
-  --line:#e7e2da;
+  --muted:#7A6E65;
+  --faint:#A69E95;
+  --line:#E8DDD0;
+  --on-dark:#F0E8DE;
+  --on-dark-muted:#C4B5A8;
+  --on-dark-faint:#9A8E84;
 }
-.sec-dark{--accent:var(--teal-bright);background:var(--ink);color:#fff;}
+.sec-dark{--accent:var(--teal-bright);background:var(--ink);color:var(--on-dark);}
 .sec-light{--accent:var(--teal-deep);background:var(--white);color:var(--ink);}
 .sec-warm{--accent:var(--teal-deep);background:var(--warm);color:var(--ink);}
 
@@ -39,7 +43,7 @@
 html{scroll-behavior:smooth;}
 body{
   font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:var(--ink);color:#fff;line-height:1.65;font-size:16px;
+  background:var(--ink);color:var(--on-dark);line-height:1.65;font-size:16px;
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,h4,.font-head{font-family:'Clash Display',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.1;}
@@ -57,14 +61,12 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   transition:transform .2s ease,box-shadow .25s ease,background .2s ease,color .2s ease;
   position:relative;overflow:hidden;
 }
-.btn-primary{background:var(--white);color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.22);}
+.btn-primary{background:var(--on-dark);color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.25);}
 .btn-primary::after{content:'';position:absolute;top:0;left:-130%;width:65%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;}
 .btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 7px 18px rgba(0,0,0,.32);}
 .btn-primary:hover::after{left:140%;}
-.btn-primary-ink{background:var(--ink);color:#fff;box-shadow:0 3px 10px rgba(29,29,31,.18);}
-.btn-primary-ink::after{content:'';position:absolute;top:0;left:-130%;width:65%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;}
-.btn-primary-ink:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 7px 18px rgba(29,29,31,.28);}
-.btn-primary-ink:hover::after{left:140%;}
+.btn-primary-ink{background:var(--ink);color:var(--on-dark);box-shadow:0 3px 10px rgba(44,33,24,.3);}
+.btn-primary-ink:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 7px 18px rgba(44,33,24,.4);}
 .btn-ghost{background:transparent;color:var(--teal-bright);border:1.5px solid var(--teal-bright);}
 .btn-ghost:hover{background:var(--teal-bright);color:var(--ink);transform:translateY(-2px);}
 .btn-ghost-light{background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal-deep);}
@@ -76,55 +78,57 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   position:sticky;top:0;z-index:100;background:var(--ink);
   transition:box-shadow .25s ease;border-bottom:1px solid transparent;
 }
-.nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.3);border-bottom-color:rgba(255,255,255,.08);}
+.nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.3);border-bottom-color:rgba(240,232,222,.08);}
 .nav-inner{max-width:1100px;margin:0 auto;padding:16px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:19px;color:#fff;text-decoration:none;letter-spacing:.01em;}
+.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:19px;color:var(--on-dark);text-decoration:none;letter-spacing:.01em;}
 .nav-logo span{color:var(--teal-bright);}
 .nav-links{display:flex;align-items:center;gap:28px;}
-.nav-links a{font-size:16px;font-weight:600;color:#d1d1d6;text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:#fff;}
+.nav-links a{font-size:16px;font-weight:600;color:var(--on-dark-muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--on-dark);}
 .nav-links a.active{color:var(--teal-bright);}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
-.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+.hamburger span{width:24px;height:2px;background:var(--on-dark);border-radius:2px;transition:.3s;}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--ink);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:22px;font-weight:700;font-family:'Clash Display',sans-serif;color:#fff;text-decoration:none;}
+.mobile-menu a{font-size:22px;font-weight:700;font-family:'Clash Display',sans-serif;color:var(--on-dark);text-decoration:none;}
 .mobile-menu a:hover{color:var(--teal-bright);}
 
-/* ============ HERO (dark) ============ */
+/* ============ HERO ============ */
 .corp-hero{padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px);}
 .corp-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);align-items:center;}
-.corp-hero h1{font-size:clamp(2.6rem,6.5vw,4.8rem);margin-bottom:1.25rem;color:#fff;}
+.corp-hero h1{font-size:clamp(2.6rem,6.5vw,4.8rem);margin-bottom:1.25rem;color:var(--on-dark);}
 .corp-hero h1 em{color:var(--teal-bright);font-style:normal;}
-.corp-hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:#b0b0b5;max-width:50ch;margin-bottom:2rem;line-height:1.7;}
+.corp-hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--on-dark-muted);max-width:50ch;margin-bottom:2rem;line-height:1.7;}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
 
 /* Stats panel */
-.stats-panel{background:#2a2a2e;border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:2rem 1.75rem;
-  box-shadow:0 24px 48px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);
-  animation:float 5s ease-in-out infinite;}
+.stats-panel{
+  background:var(--brown-card);border:1px solid rgba(240,232,222,.1);border-radius:22px;padding:2rem 1.75rem;
+  box-shadow:0 24px 48px rgba(0,0,0,.3),inset 0 1px 0 rgba(240,232,222,.06);
+  animation:float 5s ease-in-out infinite;
+}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 .stats-panel-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:1.25rem;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
-.stat-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.1rem;}
+.stat-box{background:rgba(240,232,222,.04);border:1px solid rgba(240,232,222,.07);border-radius:14px;padding:1.1rem;}
 .stat-box-num{font-family:'Clash Display',sans-serif;font-weight:700;font-size:2.2rem;color:var(--teal-bright);line-height:1;}
-.stat-box-lbl{font-size:13px;color:#8a8a8f;margin-top:.4rem;line-height:1.4;}
-.stat-divider{grid-column:1/-1;height:1px;background:rgba(255,255,255,.07);}
-.stat-industries{font-size:13px;color:#b0b0b5;line-height:1.6;}
-.stat-industries strong{color:#fff;font-weight:600;}
+.stat-box-lbl{font-size:13px;color:var(--on-dark-faint);margin-top:.4rem;line-height:1.4;}
+.stat-divider{grid-column:1/-1;height:1px;background:rgba(240,232,222,.07);}
+.stat-industries{font-size:13px;color:var(--on-dark-muted);line-height:1.6;}
+.stat-industries strong{color:var(--on-dark);font-weight:600;}
 
 /* ============ WHO IT'S FOR ============ */
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .who-card{
-  background:#2a2a2e;border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:1.75rem 1.5rem;
+  background:var(--brown-card);border:1px solid rgba(240,232,222,.09);border-radius:20px;padding:1.75rem 1.5rem;
   transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease,border-color .28s ease;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  box-shadow:inset 0 1px 0 rgba(240,232,222,.05);
 }
-.who-card:hover{transform:translateY(-5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 20px 46px -12px rgba(0,0,0,.6);border-color:var(--teal-bright);}
+.who-card:hover{transform:translateY(-5px);box-shadow:inset 0 1px 0 rgba(240,232,222,.09),0 20px 46px rgba(44,33,24,.4);border-color:var(--teal-bright);}
 .who-icon{width:44px;height:44px;border-radius:12px;background:rgba(46,204,154,.12);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
 .who-icon svg{width:22px;height:22px;stroke:var(--teal-bright);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.who-card h3{font-size:1.15rem;color:#fff;margin-bottom:.5rem;}
-.who-card p{font-size:14px;color:#8a8a8f;line-height:1.6;}
+.who-card h3{font-size:1.15rem;color:var(--on-dark);margin-bottom:.5rem;}
+.who-card p{font-size:14px;color:var(--on-dark-faint);line-height:1.6;}
 
 /* ============ OFFERINGS ============ */
 .offering-row{
@@ -133,7 +137,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   border-bottom:1px solid var(--line);
 }
 .offering-row:last-child{border-bottom:none;}
-.offering-num{font-family:'Clash Display',sans-serif;font-weight:700;font-size:3rem;color:var(--teal-deep);opacity:.35;min-width:56px;line-height:1;margin-top:-4px;}
+.offering-num{font-family:'Clash Display',sans-serif;font-weight:700;font-size:3rem;color:var(--teal-deep);opacity:.4;min-width:56px;line-height:1;margin-top:-4px;}
 .offering-content h3{font-size:clamp(1.2rem,2.5vw,1.55rem);margin-bottom:.6rem;color:var(--ink);}
 .offering-content p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:1rem;}
 .offering-tags{display:flex;flex-wrap:wrap;gap:8px;}
@@ -141,21 +145,21 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
 /* ============ PROCESS ============ */
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
-.process-steps::before{content:'';position:absolute;top:32px;left:calc(12.5%);right:calc(12.5%);height:1px;background:rgba(255,255,255,.15);z-index:0;}
+.process-steps::before{content:'';position:absolute;top:32px;left:calc(12.5%);right:calc(12.5%);height:1px;background:rgba(240,232,222,.12);z-index:0;}
 .process-step{text-align:center;padding:0 1rem;position:relative;z-index:1;}
-.process-dot{width:64px;height:64px;border-radius:50%;background:#2a2a2e;border:2px solid var(--teal-bright);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.4rem;color:var(--teal-bright);}
-.process-step h3{font-size:1rem;color:#fff;margin-bottom:.4rem;}
-.process-step p{font-size:13px;color:#8a8a8f;line-height:1.55;}
+.process-dot{width:64px;height:64px;border-radius:50%;background:var(--brown-card);border:2px solid var(--teal-bright);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.4rem;color:var(--teal-bright);}
+.process-step h3{font-size:1rem;color:var(--on-dark);margin-bottom:.4rem;}
+.process-step p{font-size:13px;color:var(--on-dark-faint);line-height:1.55;}
 
 /* ============ TESTIMONIALS ============ */
 .corp-testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 .corp-testi-card{
   background:var(--white);border:1px solid var(--line);border-radius:20px;padding:1.75rem;
-  box-shadow:0 2px 12px rgba(29,29,31,.05);
+  box-shadow:0 2px 12px rgba(44,33,24,.05);
   transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease;
 }
-.corp-testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(29,29,31,.10);}
-.corp-testi-card.featured{grid-column:1/-1;background:rgba(27,107,90,.06);border-color:rgba(27,107,90,.25);}
+.corp-testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(44,33,24,.1);}
+.corp-testi-card.featured{grid-column:1/-1;background:rgba(27,107,90,.05);border-color:rgba(27,107,90,.22);}
 .testi-stars{color:var(--teal-deep);font-size:16px;margin-bottom:.9rem;letter-spacing:2px;}
 .testi-quote{font-size:15px;line-height:1.75;color:var(--ink);margin-bottom:1.2rem;font-style:italic;}
 .corp-testi-card.featured .testi-quote{font-size:17px;}
@@ -163,27 +167,27 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .testi-role{font-size:13px;color:var(--muted);margin-top:2px;}
 .testi-company{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);margin-top:6px;}
 
-/* ============ CTA ============ */
+/* ============ CTA BOX ============ */
 .cta-box{
-  background:#2a2a2e;border:1px solid rgba(255,255,255,.1);border-radius:24px;
+  background:var(--brown-card);border:1px solid rgba(240,232,222,.1);border-radius:24px;
   padding:clamp(40px,6vw,64px);text-align:center;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  box-shadow:inset 0 1px 0 rgba(240,232,222,.06);
 }
-.cta-box h2{color:#fff;margin-bottom:1rem;}
-.cta-box p{color:#b0b0b5;font-size:17px;max-width:52ch;margin:0 auto 2rem;line-height:1.7;}
+.cta-box h2{color:var(--on-dark);margin-bottom:1rem;}
+.cta-box p{color:var(--on-dark-muted);font-size:17px;max-width:52ch;margin:0 auto 2rem;line-height:1.7;}
 
 /* ============ FOOTER ============ */
-.footer{background:var(--ink);color:#fff;border-top:1px solid #2a2a2e;}
+.footer{background:var(--ink);color:var(--on-dark);border-top:1px solid rgba(240,232,222,.06);}
 .footer-inner{max-width:1100px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,5vw,40px);display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;}
-.footer-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:18px;color:#fff;}
+.footer-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:18px;color:var(--on-dark);}
 .footer-logo span{color:var(--teal-bright);}
 .footer-nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;}
-.footer-nav a{color:#d1d1d6;text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
+.footer-nav a{color:var(--on-dark-muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
 .footer-nav a:hover{color:var(--teal-bright);}
 .footer-right{display:flex;gap:18px;justify-content:flex-end;align-items:center;flex-wrap:wrap;}
-.footer-right a{color:#d1d1d6;text-decoration:none;font-size:15px;transition:color .2s;}
+.footer-right a{color:var(--on-dark-muted);text-decoration:none;font-size:15px;transition:color .2s;}
 .footer-right a:hover{color:var(--teal-bright);}
-.footer-copy{text-align:center;color:var(--faint);font-size:14px;padding:0 0 28px;}
+.footer-copy{text-align:center;color:var(--on-dark-faint);font-size:14px;padding:0 0 28px;}
 
 /* ============ MICRO-ANIMATIONS ============ */
 @media(prefers-reduced-motion:reduce){
@@ -222,7 +226,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <a href="index.html#services">Services</a>
       <a href="corporate.html" class="active">Corporate</a>
       <a href="index.html#retreats">Retreats</a>
-      <a href="mailto:hello@kiyawellbeing.com" class="btn btn-ghost btn-sm">Book a consultation</a>
+      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Book a consultation</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -232,12 +236,12 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button style="position:absolute;top:24px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#fff;" id="menuClose" aria-label="Close menu">×</button>
+  <button style="position:absolute;top:24px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--on-dark);" id="menuClose" aria-label="Close menu">×</button>
   <a href="index.html#about" class="menu-link">About</a>
   <a href="index.html#services" class="menu-link">Services</a>
   <a href="corporate.html" class="menu-link">Corporate</a>
   <a href="index.html#retreats" class="menu-link">Retreats</a>
-  <a href="mailto:hello@kiyawellbeing.com" class="btn btn-ghost" style="margin-top:8px;">Book a consultation</a>
+  <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:8px;">Book a consultation</a>
 </div>
 
 <!-- HERO -->
@@ -249,7 +253,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <h1>Wellbeing at work,<br>done <em>properly.</em></h1>
         <p class="corp-hero-sub">Kim Yates brings 15 years of corporate experience and 10+ years of mindfulness practice to your organisation — not a generic wellness package, but a program built around your team's actual needs.</p>
         <div class="hero-btns">
-          <a href="mailto:hello@kiyawellbeing.com" class="btn btn-primary">Book a free consultation</a>
+          <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free consultation</a>
           <a href="#offerings" class="btn btn-ghost">See what's included</a>
         </div>
       </div>
@@ -281,7 +285,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   <div class="container">
     <div style="text-align:center;max-width:600px;margin:0 auto clamp(36px,5vw,52px);" data-aos="fade-up">
       <div class="label">Who we work with</div>
-      <h2 style="color:#fff;">Any team. Any size. Any industry.</h2>
+      <h2 style="color:var(--on-dark);">Any team. Any size. Any industry.</h2>
     </div>
     <div class="who-grid">
       <div class="who-card" data-aos="fade-up" data-aos-delay="0">
@@ -324,11 +328,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <h3>Conference & event sessions</h3>
         <p>A single high-impact session designed to re-energise your team mid-conference, open a leadership day, or close an offsite on a meaningful note. Kim reads the room and tailors every session in real time — she's not delivering a script, she's facilitating an experience.</p>
         <div class="offering-tags">
-          <span class="offering-tag">Mindfulness</span>
-          <span class="offering-tag">Breathwork</span>
-          <span class="offering-tag">Meditation</span>
-          <span class="offering-tag">Movement</span>
-          <span class="offering-tag">1–200+ people</span>
+          <span class="offering-tag">Mindfulness</span><span class="offering-tag">Breathwork</span><span class="offering-tag">Meditation</span><span class="offering-tag">Movement</span><span class="offering-tag">1–200+ people</span>
         </div>
       </div>
     </div>
@@ -339,12 +339,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <h3>Ongoing workplace wellbeing programs</h3>
         <p>Weekly or fortnightly sessions woven into your team's rhythm — yoga at lunch, a guided meditation before the Monday standup, or a monthly resilience workshop. Sustained practice is what creates lasting change, and Kim helps you build that into the culture.</p>
         <div class="offering-tags">
-          <span class="offering-tag">Yoga</span>
-          <span class="offering-tag">Meditation</span>
-          <span class="offering-tag">Resilience</span>
-          <span class="offering-tag">Gratitude</span>
-          <span class="offering-tag">Sleep & renewal</span>
-          <span class="offering-tag">Nutrition</span>
+          <span class="offering-tag">Yoga</span><span class="offering-tag">Meditation</span><span class="offering-tag">Resilience</span><span class="offering-tag">Gratitude</span><span class="offering-tag">Sleep & renewal</span><span class="offering-tag">Nutrition</span>
         </div>
       </div>
     </div>
@@ -355,10 +350,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <h3>Wellbeing strategy & program design</h3>
         <p>For HR and People & Culture teams who want a structured wellbeing initiative, not just a series of classes. Kim draws on 15 years of operational and strategic corporate experience to help you design a program that aligns with your values and actually gets used.</p>
         <div class="offering-tags">
-          <span class="offering-tag">Program design</span>
-          <span class="offering-tag">Burnout prevention</span>
-          <span class="offering-tag">Community building</span>
-          <span class="offering-tag">Bespoke POA</span>
+          <span class="offering-tag">Program design</span><span class="offering-tag">Burnout prevention</span><span class="offering-tag">Community building</span><span class="offering-tag">Bespoke POA</span>
         </div>
       </div>
     </div>
@@ -369,10 +361,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <h3>Client & partner experiences</h3>
         <p>Looking for something special for a client event, team-building day, or VIP experience? A guided meditation or yoga session creates a genuine moment of connection — far more memorable than another room hire and canapés.</p>
         <div class="offering-tags">
-          <span class="offering-tag">Client events</span>
-          <span class="offering-tag">Team days</span>
-          <span class="offering-tag">Hens & private groups</span>
-          <span class="offering-tag">VIP experiences</span>
+          <span class="offering-tag">Client events</span><span class="offering-tag">Team days</span><span class="offering-tag">Hens & private groups</span><span class="offering-tag">VIP experiences</span>
         </div>
       </div>
     </div>
@@ -384,7 +373,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   <div class="container">
     <div style="text-align:center;max-width:560px;margin:0 auto clamp(36px,5vw,56px);" data-aos="fade-up">
       <div class="label">How it works</div>
-      <h2 style="color:#fff;">Simple to get started.</h2>
+      <h2 style="color:var(--on-dark);">Simple to get started.</h2>
     </div>
     <div class="process-steps">
       <div class="process-step" data-aos="fade-up" data-aos-delay="0">
@@ -405,7 +394,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <div class="process-step" data-aos="fade-up" data-aos-delay="240">
         <div class="process-dot">4</div>
         <h3>Follow up</h3>
-        <p>Post-session debrief, team feedback, and recommendations for what to do next to keep the momentum going.</p>
+        <p>Post-session debrief, team feedback, and recommendations for what to do next.</p>
       </div>
     </div>
   </div>
@@ -430,7 +419,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
       <div class="corp-testi-card" data-aos="fade-up" data-aos-delay="0">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Kim recently led a mindfulness and meditation session within our organisation at our education and sales team conference. The team loved Kim's professionalism, connection and her ability to customise a session specifically for our needs. I highly recommend Kim to any organisation for small or large groups — Kim brings an energy and calming space to stop, reconnect and facilitate any team building opportunity."</p>
+        <p class="testi-quote">"Kim recently led a mindfulness and meditation session at our education and sales team conference. The team loved Kim's professionalism, connection and her ability to customise a session specifically for our needs. I highly recommend Kim to any organisation for small or large groups."</p>
         <div class="testi-name">Fiona Beamish</div>
         <div class="testi-role">National Education & Sales Manager</div>
         <div class="testi-company">Ozdare</div>
@@ -438,7 +427,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
       <div class="corp-testi-card" data-aos="fade-up" data-aos-delay="80">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"We engaged Kim to provide mindfulness, resetting and breathing exercises for an offsite event and the feedback was overwhelmingly successful!! A group of operations and supply chain finance team members can be tough to guide but Kim was able to provide insights and activities that had the whole team engaged for the entire session."</p>
+        <p class="testi-quote">"We engaged Kim for mindfulness, resetting and breathing exercises at an offsite event and the feedback was overwhelmingly successful. A group of operations and supply chain finance team members can be tough to guide but Kim had the whole team engaged for the entire session."</p>
         <div class="testi-name">Emil Tozar</div>
         <div class="testi-role">Head of Finance</div>
         <div class="testi-company">Corporate client</div>
@@ -446,7 +435,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
       <div class="corp-testi-card" data-aos="fade-up" data-aos-delay="0">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"I worked with Kim in her role as Office Manager at Remedy Drinks during the challenges of COVID. Kim took on a pivotal role in ensuring the wellbeing of our team, leading our wellbeing crew with unwavering commitment and compassion. Her initiatives were thoughtfully designed to help our team not just get through, but genuinely thrive."</p>
+        <p class="testi-quote">"I worked with Kim during the challenges of COVID. She took on a pivotal role in ensuring the wellbeing of our team, leading our wellbeing crew with unwavering commitment and compassion. Her initiatives were thoughtfully designed to help our team not just get through, but genuinely thrive."</p>
         <div class="testi-name">Zoe Nasar</div>
         <div class="testi-role">People & Culture Director</div>
         <div class="testi-company">Remedy Drinks</div>
@@ -464,10 +453,10 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <h2>Let's design something that actually works for your team.</h2>
       <p>Book a free 30-minute consultation — no obligation, no pitch. Just a conversation about what your team needs and whether Kiya Wellbeing is the right fit.</p>
       <div class="hero-btns" style="justify-content:center;">
-        <a href="mailto:hello@kiyawellbeing.com" class="btn btn-primary">Email Kim</a>
-        <a href="tel:0408851541" class="btn btn-ghost">0408 851 541</a>
+        <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free call on Calendly</a>
+        <a href="mailto:hello@kiyawellbeing.com" class="btn btn-ghost">Email Kim directly</a>
       </div>
-      <p style="margin-top:1.5rem;font-size:14px;color:#8a8a8f;">hello@kiyawellbeing.com &nbsp;·&nbsp; Programs priced on application</p>
+      <p style="margin-top:1.5rem;font-size:14px;color:var(--on-dark-faint);">Programs priced on application &nbsp;·&nbsp; hello@kiyawellbeing.com &nbsp;·&nbsp; 0408 851 541</p>
     </div>
   </div>
 </section>
@@ -494,10 +483,8 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({once:true,offset:60,duration:650});
-
 const nav = document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
-
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
