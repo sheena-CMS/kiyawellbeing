@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Does Yoga Mean to You? — Kiya Wellbeing</title>
+<meta name="description" content="On International Yoga Day, Kim Yates reflects on how yoga has shaped her life — from a gym class in her early 20s to a practice of healing, growth and coming home to herself.">
+<link rel="canonical" href="https://kiyawellbeing.com/blog/what-does-yoga-mean-to-you.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --teal-bright:#2ECC9A;
+  --teal-deep:#1B6B5A;
+  --accent:var(--teal-deep);
+  --ink:#2C2118;
+  --warm:#F4F0EB;
+  --white:#ffffff;
+  --muted:#7A6E65;
+  --faint:#A69E95;
+  --line:#E8DDD0;
+  --on-dark:#F0E8DE;
+  --on-dark-muted:#C4B5A8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--white);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Clash Display',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.label{display:inline-block;font-family:'General Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'General Sans',sans-serif;font-weight:600;font-size:16px;padding:15px 30px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .25s ease,background .2s ease;}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 3px 10px rgba(44,33,24,.25);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(44,33,24,.3);}
+.btn-sm{padding:11px 22px;font-size:15px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);transition:box-shadow .25s ease;border-bottom:1px solid transparent;}
+.nav.scrolled{box-shadow:0 4px 24px rgba(44,33,24,.1);border-bottom-color:var(--line);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:16px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:.01em;}
+.nav-logo span{color:var(--teal-deep);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:16px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-deep);}
+.nav-links .btn{color:#fff;}
+.nav-links .btn:hover{color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--warm);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:22px;font-weight:700;font-family:'Clash Display',sans-serif;color:var(--ink);text-decoration:none;}
+.mobile-menu a:hover{color:var(--teal-deep);}
+
+/* POST HERO */
+.post-hero{background:var(--warm);padding:clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px);}
+.post-meta{display:flex;align-items:center;gap:16px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.post-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);background:rgba(27,107,90,.1);border:1px solid rgba(27,107,90,.2);border-radius:100px;padding:5px 14px;}
+.post-date{font-size:14px;color:var(--muted);}
+.post-hero h1{font-size:clamp(2rem,6vw,3.8rem);max-width:18ch;margin-bottom:1.25rem;}
+.post-hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:56ch;line-height:1.7;}
+.post-author{display:flex;align-items:center;gap:12px;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);}
+.post-author-avatar{width:44px;height:44px;border-radius:50%;background:rgba(27,107,90,.15);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:16px;color:var(--teal-deep);flex-shrink:0;}
+.post-author-name{font-weight:600;font-size:15px;color:var(--ink);}
+.post-author-role{font-size:13px;color:var(--muted);}
+
+/* POST BODY */
+.post-body{max-width:680px;margin:0 auto;padding:clamp(48px,7vw,80px) clamp(20px,5vw,40px);}
+.post-body p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:1.5rem;}
+.post-body p:last-child{margin-bottom:0;}
+.post-pullquote{
+  border-left:3px solid var(--teal-deep);
+  padding:1rem 0 1rem 1.75rem;
+  margin:2.5rem 0;
+}
+.post-pullquote p{font-family:'Clash Display',sans-serif;font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.3;color:var(--ink);font-style:normal;margin:0;}
+.post-pullquote cite{display:block;font-size:13px;font-style:normal;color:var(--muted);margin-top:.6rem;letter-spacing:.04em;}
+
+/* CTA BAND */
+.post-cta{background:var(--warm);border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0;}
+.post-cta-inner{max-width:680px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.post-cta h3{font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.75rem;}
+.post-cta p{font-size:16px;color:var(--muted);margin-bottom:1.75rem;line-height:1.7;}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--on-dark);padding:clamp(48px,7vw,80px) 0 clamp(28px,4vw,40px);}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:clamp(32px,5vw,56px);}
+.footer-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:22px;color:var(--on-dark);text-decoration:none;}
+.footer-logo span{color:var(--teal-bright);}
+.footer-nav{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:flex-end;}
+.footer-nav a{font-size:15px;color:var(--on-dark-muted);text-decoration:none;transition:color .2s;}
+.footer-nav a:hover{color:var(--on-dark);}
+.footer-bottom{border-top:1px solid rgba(240,232,222,.1);padding-top:clamp(20px,3vw,28px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:13px;color:var(--on-dark-muted);}
+@media(max-width:700px){
+  .footer-inner{grid-template-columns:1fr;}.footer-nav{justify-content:flex-start;}
+  .nav-links{display:none;}.hamburger{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/index.html">Kiya <span>Wellbeing</span></a>
+    <div class="nav-links">
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#services">Work with Kim</a>
+      <a href="/index.html#workshops">Workshops</a>
+      <a href="/index.html#retreats">Retreats</a>
+      <a href="/corporate.html">Corporate</a>
+      <a href="/blog.html" class="active">Blog</a>
+      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book a call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button style="position:absolute;top:24px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--ink);" id="menuClose" aria-label="Close menu">×</button>
+  <a href="/index.html#about">About</a>
+  <a href="/index.html#services">Work with Kim</a>
+  <a href="/index.html#workshops">Workshops</a>
+  <a href="/index.html#retreats">Retreats</a>
+  <a href="/corporate.html">Corporate</a>
+  <a href="/blog.html">Blog</a>
+  <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">Book a call</a>
+</div>
+
+<!-- HERO -->
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-tag">Yoga</span>
+      <span class="post-date">June 2025</span>
+    </div>
+    <h1>What does yoga mean to you?</h1>
+    <p class="post-hero-sub">On International Yoga Day, I found myself reflecting on a question that has no single answer — and everything to do with coming home to yourself.</p>
+    <div class="post-author">
+      <div class="post-author-avatar">K</div>
+      <div>
+        <div class="post-author-name">Kim Yates</div>
+        <div class="post-author-role">Founder, Kiya Wellbeing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<article class="post-body" data-aos="fade-up">
+
+  <p>Last Sunday, I had the privilege of celebrating International Yoga Day surrounded by a beautiful community of students and guided by one of my first yoga teachers. During class, we reflected on one simple question: <em>What does yoga mean to you?</em></p>
+
+  <p>As I've reflected over the past week, I realised just how much this practice has shaped my own life.</p>
+
+  <div class="post-pullquote">
+    <p>Yoga has never been about touching my toes. It's been about finding my way back to myself.</p>
+  </div>
+
+  <p>I first stepped onto a yoga mat in my early 20s at a local gym, never imagining how profoundly it would change my life. What began as movement became a journey of healing, growth, self-discovery, and connection.</p>
+
+  <p>After completing my Yoga Teacher Training in 2019, I continue to learn every day. I feel incredibly humbled to now share these teachings while remaining a lifelong student.</p>
+
+  <p>Through seasons of loss, burnout, uncertainty, grief, and change, yoga has been my anchor. It has taught me how to breathe, soften, trust, and come home to myself again and again.</p>
+
+  <p>Last Sunday reminded me of the incredible lineage of yoga and all the teachers, mentors, and students who have shaped my journey. I'll always remember those golden nuggets of wisdom shared at exactly the right moment — the lessons that quietly changed my life.</p>
+
+  <p>It is my deepest hope that through a class, a breath, a meditation, or simply a moment of stillness, I've been able to pass on even one of those golden nuggets to someone else.</p>
+
+  <p>I found myself with tears in my eyes that day — not from sadness, but from gratitude. Gratitude for this practice, for my teachers, and for this incredible community. Watching your growth, courage, and transformation truly warms my heart.</p>
+
+  <div class="post-pullquote">
+    <p>"Yoga is the journey of the self, through the self, to the self."</p>
+    <cite>— Bhagavad Gita</cite>
+  </div>
+
+  <p>Thank you for being part of this journey. I have been inviting students to sit with this question all week — and I would love to hear from you.</p>
+
+  <p><strong>What does yoga mean to you?</strong></p>
+
+</article>
+
+<!-- CTA -->
+<section class="post-cta">
+  <div class="post-cta-inner">
+    <div class="label">Come practise with Kim</div>
+    <h3>Ready to find your way back to yourself?</h3>
+    <p>Whether you're brand new to yoga or returning after a long break, there's a place for you here. Book a free discovery call and let's find the right session for you.</p>
+    <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free discovery call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a class="footer-logo" href="/index.html">Kiya <span>Wellbeing</span></a>
+      <nav class="footer-nav">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#services">Work with Kim</a>
+        <a href="/index.html#workshops">Workshops</a>
+        <a href="/index.html#retreats">Retreats</a>
+        <a href="/corporate.html">Corporate</a>
+        <a href="/blog.html">Blog</a>
+        <a href="mailto:hello@kiyawellbeing.com">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Kiya Wellbeing · Kim Yates · Melbourne</span>
+      <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" style="font-size:13px;color:var(--on-dark-muted);text-decoration:none;">@kiya_wellbeing</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({once:true,offset:60,duration:650});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('menuClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+</script>
+</body>
+</html>
