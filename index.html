@@ -99,14 +99,16 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
 /* ============ HERO ============ */
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);align-items:center;}
-.hero h1{font-size:clamp(4.2rem,12vw,8.5rem);margin-bottom:1.25rem;letter-spacing:-.01em;}
+.hero h1{font-size:clamp(4.8rem,14vw,10rem);margin-bottom:1.25rem;letter-spacing:-.01em;}
 .hero h1 em{color:var(--accent);font-style:normal;}
 
 /* HEADING REVEAL */
-.reveal-lines{overflow:hidden;}
-.reveal-line{display:block;transform:translateY(110%);opacity:0;transition:transform .7s cubic-bezier(.16,1,.3,1),opacity .4s ease;}
-.reveal-line.in{transform:translateY(0);opacity:1;}
-.reveal-line:nth-child(2){transition-delay:.12s;}
+.reveal-lines{overflow:visible;}
+.reveal-line{display:block;overflow:hidden;transform:translateY(0);opacity:1;}
+.reveal-line span{display:block;transform:translateY(110%);opacity:0;transition:transform .7s cubic-bezier(.16,1,.3,1),opacity .4s ease;}
+.reveal-line.in span{transform:translateY(0);opacity:1;}
+.reveal-line:nth-child(2){margin-top:.3em;transition-delay:.12s;}
+.reveal-line:nth-child(2) span{transition-delay:.12s;}
 .reveal-line:nth-child(3){transition-delay:.22s;}
 
 .h2-reveal{overflow:hidden;}
@@ -344,8 +346,8 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <div data-aos="fade-right" data-aos-duration="700">
         <div class="label">Melbourne · In-studio · Corporate · Online</div>
         <h1 class="reveal-lines">
-          <span class="reveal-line">Move. <em>Breathe.</em></span>
-          <span class="reveal-line">Come home to yourself.</span>
+          <span class="reveal-line"><span>Move. <em>Breathe.</em></span></span>
+          <span class="reveal-line"><span>Come home to yourself.</span></span>
         </h1>
         <p class="hero-sub">Private yoga, meditation, reiki and corporate wellbeing — led by Kim Yates, a seasoned mindfulness facilitator with 10+ years of practice and 15 years of corporate experience.</p>
         <div class="hero-btns">
