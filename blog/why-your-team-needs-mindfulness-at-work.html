@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your Team Needs Mindfulness at Work — Kiya Wellbeing</title>
+<meta name="description" content="4 in 5 Australian workers are burnt out. The research is clear — mindfulness at work isn't a nice-to-have. Kim Yates on what the science says, and what to do about it.">
+<link rel="canonical" href="https://kiyawellbeing.com/blog/why-your-team-needs-mindfulness-at-work.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --teal-bright:#2ECC9A;
+  --teal-deep:#1B6B5A;
+  --accent:var(--teal-deep);
+  --ink:#2C2118;
+  --warm:#F4F0EB;
+  --white:#ffffff;
+  --muted:#7A6E65;
+  --faint:#A69E95;
+  --line:#E8DDD0;
+  --on-dark:#F0E8DE;
+  --on-dark-muted:#C4B5A8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--white);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Clash Display',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.label{display:inline-block;font-family:'General Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'General Sans',sans-serif;font-weight:600;font-size:16px;padding:15px 30px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .25s ease,background .2s ease;}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 3px 10px rgba(44,33,24,.25);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(44,33,24,.3);}
+.btn-sm{padding:11px 22px;font-size:15px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);transition:box-shadow .25s ease;border-bottom:1px solid transparent;}
+.nav.scrolled{box-shadow:0 4px 24px rgba(44,33,24,.1);border-bottom-color:var(--line);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:16px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:.01em;}
+.nav-logo span{color:var(--teal-deep);}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-deep);}
+.nav-links .btn{color:#fff;}
+.nav-links .btn:hover{color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--warm);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:22px;font-weight:700;font-family:'Clash Display',sans-serif;color:var(--ink);text-decoration:none;}
+.mobile-menu a:hover{color:var(--teal-deep);}
+
+/* POST HERO */
+.post-hero{background:var(--warm);padding:clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px);}
+.post-meta{display:flex;align-items:center;gap:16px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.post-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);background:rgba(27,107,90,.1);border:1px solid rgba(27,107,90,.2);border-radius:100px;padding:5px 14px;}
+.post-date{font-size:14px;color:var(--muted);}
+.post-hero h1{font-size:clamp(2rem,6vw,3.8rem);max-width:20ch;margin-bottom:1.25rem;}
+.post-hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:56ch;line-height:1.7;}
+.post-author{display:flex;align-items:center;gap:12px;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);}
+.post-author-avatar{width:44px;height:44px;border-radius:50%;background:rgba(27,107,90,.15);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:16px;color:var(--teal-deep);flex-shrink:0;}
+.post-author-name{font-weight:600;font-size:15px;color:var(--ink);}
+.post-author-role{font-size:13px;color:var(--muted);}
+
+/* STAT CALLOUT */
+.stat-callout{background:rgba(27,107,90,.07);border:1px solid rgba(27,107,90,.2);border-radius:20px;padding:2rem 2.25rem;margin:2.5rem 0;display:flex;gap:1.5rem;align-items:flex-start;}
+.stat-callout-num{font-family:'Clash Display',sans-serif;font-size:clamp(2.8rem,7vw,4rem);font-weight:700;color:var(--teal-deep);line-height:1;flex-shrink:0;}
+.stat-callout-text{font-size:16px;color:var(--ink);line-height:1.6;padding-top:.4rem;}
+.stat-callout-text strong{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:.35rem;}
+
+/* POST BODY */
+.post-body{max-width:680px;margin:0 auto;padding:clamp(48px,7vw,80px) clamp(20px,5vw,40px);}
+.post-body p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:1.5rem;}
+.post-body p:last-child{margin-bottom:0;}
+.post-body h2{font-size:clamp(1.3rem,3vw,1.7rem);color:var(--ink);margin:2.5rem 0 1rem;}
+.post-pullquote{border-left:3px solid var(--teal-deep);padding:1rem 0 1rem 1.75rem;margin:2.5rem 0;}
+.post-pullquote p{font-family:'Clash Display',sans-serif;font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.3;color:var(--ink);font-style:normal;margin:0;}
+.post-pullquote cite{display:block;font-size:13px;font-style:normal;color:var(--muted);margin-top:.6rem;letter-spacing:.04em;}
+.post-source{font-size:13px;color:var(--faint);margin-top:-.75rem;margin-bottom:1.5rem;font-style:italic;}
+
+/* CTA BAND */
+.post-cta{background:var(--warm);border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0;}
+.post-cta-inner{max-width:680px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.post-cta h3{font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.75rem;}
+.post-cta p{font-size:16px;color:var(--muted);margin-bottom:1.75rem;line-height:1.7;}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--on-dark);padding:clamp(48px,7vw,80px) 0 clamp(28px,4vw,40px);}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:clamp(32px,5vw,56px);}
+.footer-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:22px;color:var(--on-dark);text-decoration:none;}
+.footer-logo span{color:var(--teal-bright);}
+.footer-nav{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:flex-end;}
+.footer-nav a{font-size:15px;color:var(--on-dark-muted);text-decoration:none;transition:color .2s;}
+.footer-nav a:hover{color:var(--on-dark);}
+.footer-bottom{border-top:1px solid rgba(240,232,222,.1);padding-top:clamp(20px,3vw,28px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:13px;color:var(--on-dark-muted);}
+@media(max-width:1080px){.nav-links{display:none;}.hamburger{display:flex;}}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr;}.footer-nav{justify-content:flex-start;}.stat-callout{flex-direction:column;gap:.75rem;}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/index.html">Kiya <span>Wellbeing</span></a>
+    <div class="nav-links">
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#services">Work with Kim</a>
+      <a href="/index.html#workshops">Workshops</a>
+      <a href="/index.html#retreats">Retreats</a>
+      <a href="/corporate.html">Corporate</a>
+      <a href="/blog.html" class="active">Blog</a>
+      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Talk to Kim</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button style="position:absolute;top:24px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--ink);" id="menuClose" aria-label="Close menu">×</button>
+  <a href="/index.html#about">About</a>
+  <a href="/index.html#services">Work with Kim</a>
+  <a href="/index.html#workshops">Workshops</a>
+  <a href="/index.html#retreats">Retreats</a>
+  <a href="/corporate.html">Corporate</a>
+  <a href="/blog.html">Blog</a>
+  <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">Talk to Kim</a>
+</div>
+
+<!-- HERO -->
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-tag">Corporate Wellbeing</span>
+      <span class="post-date">July 2025</span>
+    </div>
+    <h1>The science is in. Your team needs mindfulness.</h1>
+    <p class="post-hero-sub">4 in 5 Australian workers are burnt out right now. Here's what the research says — and what one hour a week can actually change.</p>
+    <div class="post-author">
+      <div class="post-author-avatar">K</div>
+      <div>
+        <div class="post-author-name">Kim Yates</div>
+        <div class="post-author-role">Founder, Kiya Wellbeing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<article class="post-body" data-aos="fade-up">
+
+  <p>When I spent 15 years working in corporate environments, I didn't have words like "burnout" or "nervous system regulation" in my vocabulary. I just knew that by Thursday afternoon, the room felt heavier than it did on Monday morning. That people were shorter with each other. That the energy that drove great work in January had quietly leaked out somewhere by October.</p>
+
+  <p>I thought that was just how work felt. Turns out, a lot of research agrees — and it's getting worse.</p>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">4 in 5</div>
+    <div class="stat-callout-text">
+      <strong>Australian workers right now</strong>
+      Australian workers are experiencing some level of burnout. Not a little tired. Burnt out.
+    </div>
+  </div>
+
+  <p>A 2025 survey of Australian full-time office workers found that four in five are experiencing burnout. Beyond Blue puts it at one in two experiencing full burnout in the last year alone. And Australia ranks second in the world for workplace stress — behind only one other country.</p>
+
+  <p>These aren't numbers about a few struggling individuals. They're a description of how most of our workplaces feel right now.</p>
+
+  <h2>What the research actually says about mindfulness</h2>
+
+  <p>The good news — and there is real, peer-reviewed good news — is that mindfulness-based interventions have been shown to work. Not as a feel-good bonus, but as a measurable, evidence-backed tool for reducing stress and improving performance.</p>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">9/10</div>
+    <div class="stat-callout-text">
+      <strong>Research finding</strong>
+      Nearly 9 in 10 people report that mindfulness and meditation helped reduce their stress or aided relaxation.
+    </div>
+  </div>
+
+  <p>A randomised controlled trial of 1,458 employees — one of the largest of its kind — found that those who undertook a mindfulness programme showed significant reductions in perceived stress in just eight weeks. Not months. Eight weeks.</p>
+  <p class="post-source">Source: Digital Meditation to Target Employee Stress, PMC / National Institutes of Health, 2024</p>
+
+  <p>A separate 2025 meta-analysis published in <em>Stress and Health</em> (Wiley) reviewed randomised controlled trials of mindfulness-based programmes in the workplace and confirmed their effectiveness for reducing stress, burnout, and improving work engagement.</p>
+
+  <div class="post-pullquote">
+    <p>Mindfulness reduced anxiety levels by 30% within two months — proving to be as effective as conventional approaches to stress management.</p>
+    <cite>— Goleman Emotional Intelligence Institute, 2025 research review</cite>
+  </div>
+
+  <p>What I find most compelling about these findings is what they tell us about <em>how</em> mindfulness works. It doesn't remove the workload. It doesn't change the deadline. What it does is shift how the brain appraises pressure — from threat to challenge. That's not a subtle difference. That's the difference between a team that freezes and a team that finds a way through.</p>
+
+  <h2>This isn't a meditation retreat. It's a business decision.</h2>
+
+  <p>I've heard the pushback. "We don't have time for this." "Our people won't go for it." "It sounds a bit out there."</p>
+
+  <p>I get it. I said similar things myself, once. But Safe Work Australia's own data frames the cost of inaction clearly: psychological injury claims are among the most expensive and longest to resolve of all workplace injuries. The average time off for a psychological claim is more than twice that of a physical one.</p>
+
+  <p>When I bring a mindfulness session into a workplace, I'm not asking anyone to sit cross-legged or chant. I'm offering tools — breathwork, grounding, simple movement, guided stillness — that people can use at their desk, in a meeting, or on the commute home. Practical. Evidence-based. And designed for people who've never done anything like this before.</p>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">8wks</div>
+    <div class="stat-callout-text">
+      <strong>Time to measurable results</strong>
+      Significant, measurable reductions in workplace stress have been observed in randomised trials in as little as eight weeks of practice.
+    </div>
+  </div>
+
+  <p>The teams I work with don't come in already believing in this. They come in a little sceptical, a little stiff, and usually a little exhausted. By the end of the first session, something shifts — not because of anything magical, but because most people haven't been given permission to be still for an hour in months.</p>
+
+  <p>That's all it takes to start. Permission. Space. And someone to guide you through it.</p>
+
+  <p>If you're leading a team right now and you're watching people run on empty, I'd love to talk. Not about a grand wellness strategy — just about what one session could do for the people in your care.</p>
+
+  <p><strong>The research is there. The need is there. The only question is when.</strong></p>
+
+</article>
+
+<!-- CTA -->
+<section class="post-cta">
+  <div class="post-cta-inner">
+    <div class="label">Bring mindfulness to your team</div>
+    <h3>Let's design something that actually works.</h3>
+    <p>A free 30-minute consultation — no obligation, no pitch. Just a conversation about what your team needs and whether Kiya Wellbeing is the right fit.</p>
+    <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a class="footer-logo" href="/index.html">Kiya <span>Wellbeing</span></a>
+      <nav class="footer-nav">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#services">Work with Kim</a>
+        <a href="/index.html#workshops">Workshops</a>
+        <a href="/index.html#retreats">Retreats</a>
+        <a href="/corporate.html">Corporate</a>
+        <a href="/blog.html">Blog</a>
+        <a href="mailto:hello@kiyawellbeing.com">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Kiya Wellbeing · Kim Yates · Melbourne</span>
+      <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" style="font-size:13px;color:var(--on-dark-muted);text-decoration:none;">@kiya_wellbeing</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({once:true,offset:60,duration:650});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('menuClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+</script>
+</body>
+</html>
