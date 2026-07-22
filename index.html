@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=fraunces@400,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
@@ -25,8 +25,8 @@
   --teal-bright:#2ECC9A;
   --teal-deep:#1B6B5A;
   --accent:var(--teal-deep);
-  --ink:#2C2118;        /* deep espresso brown — no black */
-  --brown-card:#3D3025; /* dark card surfaces */
+  --rose:#C4837A;
+  --ink:#2C2118;
   --warm:#F4F0EB;
   --white:#ffffff;
   --muted:#7A6E65;
@@ -48,7 +48,8 @@ body{
   background:var(--warm);color:var(--ink);line-height:1.65;font-size:16px;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4,.font-head{font-family:'Clash Display',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.1;}
+h1,h2,h3,h4,.font-head{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.01em;line-height:1.1;color:var(--teal-deep);}
+.sec-dark h1,.sec-dark h2,.sec-dark h3{color:var(--on-dark);}
 .container{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
 .sec{padding:clamp(64px,9vw,110px) 0;}
 .label{display:inline-block;font-family:'General Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem;}
@@ -63,7 +64,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   transition:transform .2s ease,box-shadow .25s ease,background .2s ease,color .2s ease;
   position:relative;overflow:hidden;
 }
-.btn-primary{background:var(--ink);color:#fff;box-shadow:0 3px 10px rgba(44,33,24,.25);}
+.btn-primary{background:var(--teal-deep);color:#fff;box-shadow:0 3px 10px rgba(27,107,90,.25);}
 .btn-primary.btn-on-dark{background:var(--on-dark);color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.22);}
 .btn-primary::after{content:'';position:absolute;top:0;left:-130%;width:65%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;}
 .btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 7px 18px rgba(44,33,24,.3);}
@@ -75,6 +76,42 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .btn-ghost.on-dark:hover{background:var(--teal-bright);color:var(--ink);}
 .btn-sm{padding:11px 22px;font-size:15px;}
 
+/* ============ PILLARS ============ */
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){.pillar-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}}
+.pillar-card{
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:0 4px 18px rgba(44,33,24,.07);border:1px solid var(--line);
+  display:flex;flex-direction:column;text-decoration:none;color:var(--ink);
+  transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease;
+}
+.pillar-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(44,33,24,.14);}
+.pillar-accent-bar{height:4px;}
+.pillar-header{padding:1.75rem 1.75rem 1.1rem;}
+.pillar-num{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem;}
+.pillar-card h3{font-size:clamp(1.5rem,2.5vw,1.85rem);line-height:1.05;margin-bottom:.45rem;}
+.pillar-tagline{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75;}
+.pillar-body{padding:.1rem 1.75rem 1.75rem;flex:1;display:flex;flex-direction:column;}
+.pillar-divider{border:none;border-top:1px solid var(--line);margin:.9rem 0 1rem;}
+.pillar-list{list-style:none;padding:0;margin:0 0 1.5rem;flex:1;}
+.pillar-list li{font-size:14px;color:var(--muted);padding:7px 0;display:flex;align-items:flex-start;gap:9px;border-bottom:1px solid rgba(232,221,208,.55);}
+.pillar-list li:last-child{border-bottom:none;}
+.pillar-list li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+.pillar-link{font-size:13px;font-weight:700;letter-spacing:.03em;display:inline-flex;align-items:center;gap:5px;margin-top:auto;transition:gap .18s ease;}
+.pillar-card:hover .pillar-link{gap:9px;}
+/* Corp — teal */
+.pillar-corp .pillar-accent-bar{background:var(--teal-deep);}
+.pillar-corp h3,.pillar-corp .pillar-link,.pillar-corp .pillar-tagline{color:var(--teal-deep);}
+.pillar-corp .pillar-list li::before{background:var(--teal-deep);}
+/* Individual — rose */
+.pillar-indiv .pillar-accent-bar{background:var(--rose);}
+.pillar-indiv h3,.pillar-indiv .pillar-link,.pillar-indiv .pillar-tagline{color:var(--rose);}
+.pillar-indiv .pillar-list li::before{background:var(--rose);}
+/* Events — teal (distinct via rose accent bar) */
+.pillar-events .pillar-accent-bar{background:var(--teal-deep);}
+.pillar-events h3,.pillar-events .pillar-link,.pillar-events .pillar-tagline{color:var(--teal-deep);}
+.pillar-events .pillar-list li::before{background:var(--teal-deep);}
+
 /* ============ NAV ============ */
 .nav{
   position:sticky;top:0;z-index:100;background:var(--white);
@@ -82,7 +119,8 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 }
 .nav.scrolled{box-shadow:0 4px 24px rgba(44,33,24,.1);border-bottom-color:var(--line);}
 .nav-inner{max-width:1100px;margin:0 auto;padding:16px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:.01em;}
+.nav-logo{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:9px;}
+.nav-lotus{width:20px;height:24px;color:var(--teal-deep);flex-shrink:0;}
 .nav-logo span{color:var(--teal-deep);}
 .nav-links{display:flex;align-items:center;gap:20px;}
 .nav-links a{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s;white-space:nowrap;}
@@ -93,13 +131,13 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .hamburger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--warm);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:22px;font-weight:700;font-family:'Clash Display',sans-serif;color:var(--ink);text-decoration:none;}
+.mobile-menu a{font-size:22px;font-weight:700;font-family:'Fraunces',Georgia,serif;color:var(--ink);text-decoration:none;}
 .mobile-menu a:hover{color:var(--teal-deep);}
 
 /* ============ HERO ============ */
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);align-items:center;}
 .hero h1{font-size:clamp(4.8rem,14vw,10rem);margin-bottom:5rem;letter-spacing:-.01em;}
-.hero h1 em{color:var(--accent);font-style:normal;}
+.hero h1 em{color:var(--teal-bright);font-style:normal;}
 
 /* HEADING REVEAL */
 .reveal-lines{overflow:visible;}
@@ -134,16 +172,16 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;}
 .photo-card-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--teal-deep);opacity:.45;}
 .photo-card-placeholder svg{width:80px;height:80px;}
-.photo-card-placeholder span{font-family:'Clash Display',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;}
+.photo-card-placeholder span{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:14px;letter-spacing:.03em;}
 .photo-card::after{content:'';position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(244,240,235,.92),rgba(244,240,235,0));z-index:1;pointer-events:none;}
-.photo-card .photo-name{position:absolute;left:0;right:0;bottom:42px;text-align:center;font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:var(--ink);letter-spacing:-.01em;z-index:2;}
+.photo-card .photo-name{position:absolute;left:0;right:0;bottom:42px;text-align:center;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:var(--teal-deep);letter-spacing:-.01em;z-index:2;}
 .photo-card .photo-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--ink);font-size:14px;opacity:.7;z-index:2;}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 
 /* Logo strip */
 .logo-strip{margin-top:clamp(48px,7vw,72px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
 .logo-track{display:flex;gap:clamp(32px,5vw,64px);width:max-content;animation:scroll-logos 28s linear infinite;}
-.logo-track span{font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--faint);white-space:nowrap;}
+.logo-track span{font-family:'General Sans','Clash Display',sans-serif;font-weight:700;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--faint);white-space:nowrap;}
 @keyframes scroll-logos{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ============ SERVICES ============ */
@@ -187,7 +225,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 }
 .workshop-card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(44,33,24,.13);border-color:var(--teal-deep);}
 .workshop-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:1rem;}
-.workshop-card h3{font-size:clamp(1.3rem,2.5vw,1.6rem);color:var(--ink);margin-bottom:.6rem;line-height:1.2;}
+.workshop-card h3{font-size:clamp(1.3rem,2.5vw,1.6rem);margin-bottom:.6rem;line-height:1.2;}
 .workshop-card .ws-venue{font-size:14px;color:var(--muted);margin-bottom:1.25rem;}
 .workshop-dates{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem;}
 .workshop-date-row{display:flex;align-items:baseline;gap:12px;font-size:15px;}
@@ -207,7 +245,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:1;}
 .about-quote{font-size:clamp(1.1rem,2.3vw,1.35rem);font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:1.6rem;border-left:3px solid var(--accent);padding-left:1.1rem;}
 .stats-row{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,40px);margin-bottom:1.6rem;}
-.stat-num{font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--accent);line-height:1;}
+.stat-num{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--accent);line-height:1;}
 .stat-lbl{font-size:14px;color:var(--muted);margin-top:.4rem;font-weight:600;}
 .about-grid p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:1.1rem;}
 
@@ -223,7 +261,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .retreat-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(44,33,24,.16);border-color:var(--teal-deep);background:rgba(27,107,90,.04);}
 .retreat-card .retreat-cta{transition:gap .2s ease;display:inline-flex;align-items:center;gap:4px;}
 .retreat-card:hover .retreat-cta{gap:10px;color:var(--teal-deep);}.retreat-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:.85rem;}
-.retreat-card h3{font-size:1.35rem;color:var(--ink);margin-bottom:.4rem;line-height:1.2;}
+.retreat-card h3{font-size:1.35rem;margin-bottom:.4rem;line-height:1.2;}
 .retreat-card .retreat-loc{font-size:15px;color:var(--muted);margin-bottom:.75rem;}
 .retreat-card .retreat-date{font-size:14px;color:var(--teal-deep);font-weight:700;margin-bottom:auto;}
 .retreat-card .retreat-price{font-size:14px;color:var(--muted);margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(44,33,24,.1);}
@@ -241,7 +279,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(44,33,24,.1);}
 .testi-stars{color:var(--teal-deep);font-size:16px;margin-bottom:.9rem;letter-spacing:2px;}
 .testi-quote{font-size:15px;line-height:1.7;color:var(--ink);margin-bottom:1.2rem;font-style:italic;}
-.testi-name{font-family:'Clash Display',sans-serif;font-weight:700;font-size:15px;color:var(--ink);}
+.testi-name{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:15px;color:var(--teal-deep);}
 .testi-role{font-size:13px;color:var(--muted);margin-top:2px;}
 .testi-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(27,107,90,.1);color:var(--teal-deep);border-radius:100px;padding:3px 10px;margin-top:6px;}
 
@@ -252,7 +290,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 /* ============ FOOTER ============ */
 .footer{background:var(--ink);color:var(--on-dark);}
 .footer-inner{max-width:1100px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,5vw,40px);display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;}
-.footer-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:18px;color:var(--on-dark);}
+.footer-logo{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:18px;color:var(--on-dark);}
 .footer-logo span{color:var(--teal-bright);}
 .footer-nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;}
 .footer-nav a{color:var(--on-dark-muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
@@ -267,7 +305,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .modal-overlay.show{display:flex;}
 .modal-card{background:#fff;border-radius:24px;max-width:440px;width:100%;padding:2.5rem 2rem;text-align:center;box-shadow:0 40px 80px rgba(44,33,24,.35);animation:modalUp .4s cubic-bezier(.2,.7,.3,1);position:relative;}
 @keyframes modalUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-.modal-card h3{font-size:1.7rem;margin-bottom:1rem;color:var(--ink);}
+.modal-card h3{font-size:1.7rem;margin-bottom:1rem;}
 .modal-card p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:1.6rem;}
 .modal-close{background:none;border:none;cursor:pointer;position:absolute;top:1.25rem;right:1.25rem;font-size:24px;color:var(--muted);line-height:1;}
 .contact-list{list-style:none;padding:0;text-align:left;margin-bottom:1.6rem;}
@@ -312,7 +350,22 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">Kiya <span>Wellbeing</span></a>
+    <a class="nav-logo" href="index.html">
+      <svg class="nav-lotus" viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="2.5" r="1.8" fill="currentColor"/>
+        <circle cx="15.5" cy="5.5" r="1.2" fill="currentColor"/>
+        <circle cx="28.5" cy="5.5" r="1.2" fill="currentColor"/>
+        <path d="M22 10C20 15.5 18 23 22 31C26 23 24 15.5 22 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M22 25C18 19 10 20 7 26C11.5 29 18.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M22 25C26 19 34 20 37 26C32.5 29 25.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M22 29C15.5 21 3 23 1 31.5C7.5 35 17 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M22 29C28.5 21 41 23 43 31.5C36.5 35 27 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <line x1="22" y1="31" x2="22" y2="44" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M22 40C17.5 35 10 37 8 42C12.5 43 19.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M22 40C26.5 35 34 37 36 42C31.5 43 24.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+      Kiya <span>Wellbeing</span>
+    </a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Work with Kim</a>
@@ -353,7 +406,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         </h1>
         <p class="hero-sub">Private yoga, meditation, reiki and corporate wellbeing — led by Kim Yates, a seasoned mindfulness facilitator with 10+ years of practice and 15 years of corporate experience.</p>
         <div class="hero-btns">
-          <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--teal-deep);">Book a free discovery call</a>
+          <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free discovery call</a>
         </div>
         <div class="hero-pills">
           <div class="hero-pills-label">Explore</div>
@@ -389,50 +442,71 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- PILLARS -->
 <section class="sec sec-light" id="services">
   <div class="container">
     <div style="margin:0 0 clamp(36px,5vw,56px);" data-aos="fade-up">
-      <div class="label">Work with Kim</div>
-      <h2 class="h2-reveal"><span class="h2-inner">Move at your own pace.</span></h2>
-      <p class="lead" style="color:var(--muted);">Private, in-studio, and corporate sessions — all shaped to where you are right now, not where you think you should be.</p>
+      <div class="label">How we work together</div>
+      <h2 class="h2-reveal"><span class="h2-inner">There's more than one way.</span></h2>
+      <p class="lead" style="color:var(--muted);">Whether you're an organisation, an individual seeking rest, or looking for community — there's a way for us to work together.</p>
     </div>
-    <div class="retreat-grid">
+    <div class="pillar-grid">
 
-      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="retreat-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="retreat-tag">Private &amp; in-studio</div>
-        <h3>Yoga</h3>
-        <div class="retreat-loc">Yin yoga, yoga nidra &amp; mixed practices</div>
-        <div class="retreat-date">All levels welcome</div>
-        <div class="retreat-price">From <strong>$80</strong> / 45 min &nbsp;&middot;&nbsp; <strong>$100</strong> / 60 min</div>
-        <div class="retreat-cta">Book a free intro chat →</div>
+      <a href="corporate.html" class="pillar-card pillar-corp" data-aos="fade-up" data-aos-delay="0">
+        <div class="pillar-accent-bar"></div>
+        <div class="pillar-header">
+          <div class="pillar-num">01 &nbsp;·&nbsp; Corporate</div>
+          <h3>Wellbeing at Work</h3>
+          <div class="pillar-tagline">For organisations &amp; teams</div>
+        </div>
+        <div class="pillar-body">
+          <hr class="pillar-divider">
+          <ul class="pillar-list">
+            <li>Wellbeing programs</li>
+            <li>Bespoke workshops</li>
+            <li>One-off sessions</li>
+            <li>Yoga, meditation, breathwork &amp; sound</li>
+          </ul>
+          <div class="pillar-link">See corporate programs →</div>
+        </div>
       </a>
 
-      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="retreat-card" data-aos="fade-up" data-aos-delay="60">
-        <div class="retreat-tag">Private &amp; group</div>
-        <h3>Meditation</h3>
-        <div class="retreat-loc">Mindfulness, breath awareness &amp; visualisation</div>
-        <div class="retreat-date">One-on-one or corporate</div>
-        <div class="retreat-price">From <strong>$60</strong> / 30 min &nbsp;&middot;&nbsp; <strong>$80</strong> / 45 min</div>
-        <div class="retreat-cta">Book a free intro chat →</div>
+      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="pillar-card pillar-indiv" data-aos="fade-up" data-aos-delay="80">
+        <div class="pillar-accent-bar"></div>
+        <div class="pillar-header">
+          <div class="pillar-num">02 &nbsp;·&nbsp; Individual</div>
+          <h3>Rest &amp; Reset</h3>
+          <div class="pillar-tagline">Private 1:1 sessions</div>
+        </div>
+        <div class="pillar-body">
+          <hr class="pillar-divider">
+          <ul class="pillar-list">
+            <li>1:1 Reiki healing — 60–90 min</li>
+            <li>Nervous system reset — 2 hrs</li>
+            <li>Private yoga — yin, nidra &amp; mixed</li>
+            <li>Private meditation &amp; breathwork</li>
+          </ul>
+          <div class="pillar-link">Book a free intro chat →</div>
+        </div>
       </a>
 
-      <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="retreat-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="retreat-tag">Energy healing</div>
-        <h3>Reiki</h3>
-        <div class="retreat-loc">Ancient Japanese healing — gentle &amp; restorative</div>
-        <div class="retreat-date">In-studio, Melbourne</div>
-        <div class="retreat-price">From <strong>$100</strong> / 60 min &nbsp;&middot;&nbsp; <strong>$150</strong> / 90 min</div>
-        <div class="retreat-cta">Book a free intro chat →</div>
-      </a>
-
-      <a href="corporate.html" class="retreat-card" data-aos="fade-up" data-aos-delay="180">
-        <div class="retreat-tag">Workplace wellbeing</div>
-        <h3>Corporate</h3>
-        <div class="retreat-loc">Bespoke programs for organisations</div>
-        <div class="retreat-date">15 years corporate experience</div>
-        <div class="retreat-price"><strong>Price on application</strong></div>
-        <div class="retreat-cta">See corporate programs →</div>
+      <a href="https://www.eventbrite.com.au/o/72706899423" target="_blank" rel="noopener" class="pillar-card pillar-events" data-aos="fade-up" data-aos-delay="160">
+        <div class="pillar-accent-bar"></div>
+        <div class="pillar-header">
+          <div class="pillar-num">03 &nbsp;·&nbsp; Events</div>
+          <h3>Community &amp; Connection</h3>
+          <div class="pillar-tagline">Workshops &amp; retreats</div>
+        </div>
+        <div class="pillar-body">
+          <hr class="pillar-divider">
+          <ul class="pillar-list">
+            <li>Yin · Pin · Sound</li>
+            <li>She Who Nurtures</li>
+            <li>Sound baths</li>
+            <li>Half &amp; full day retreats</li>
+          </ul>
+          <div class="pillar-link">Browse upcoming events →</div>
+        </div>
       </a>
 
     </div>
