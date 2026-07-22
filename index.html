@@ -27,7 +27,7 @@
   --accent:var(--teal-deep);
   --rose:#C4837A;
   --ink:#2C2118;
-  --warm:#F4F0EB;
+  --warm:#F7F0E8;
   --white:#ffffff;
   --muted:#7A6E65;
   --faint:#A69E95;
@@ -392,8 +392,9 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 </div>
 
 <!-- HERO -->
-<section class="sec sec-warm" id="home" style="padding-top:clamp(56px,8vw,96px);">
-  <div class="container">
+<section class="sec" id="home" style="padding-top:clamp(56px,8vw,96px);background:url(hero.jpg) center/cover no-repeat;position:relative;">
+  <div style="position:absolute;inset:0;background:rgba(247,240,232,0.78);"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <div class="hero-grid">
       <div data-aos="fade-right" data-aos-duration="700">
         <div class="label">Melbourne · In-studio · Corporate · Online</div>
@@ -575,16 +576,16 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 </section>
 
 <!-- FINAL CTA -->
-<section class="sec sec-dark">
+<section class="sec" style="background:#E6F4EF;">
   <div class="container final-cta">
     <div data-aos="fade-up">
       <div class="label">Ready to begin?</div>
-      <h2 style="color:var(--on-dark);max-width:16ch;margin:0 auto 1.25rem;">Your first step is a conversation.</h2>
-      <p class="cta-lead">Whether you're curious about yoga, need corporate wellbeing support, or want to book a retreat — reach out. Discovery calls are free and there's no pressure.</p>
+      <h2 style="max-width:16ch;margin:0 auto 1.25rem;">Your first step is a conversation.</h2>
+      <p class="cta-lead" style="color:var(--muted);">Whether you're curious about yoga, need corporate wellbeing support, or want to book a retreat — reach out. Discovery calls are free and there's no pressure.</p>
       <div class="hero-btns" style="justify-content:center;">
-        <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary btn-on-dark">Book a free call</a>
-        <a href="https://www.eventbrite.com.au/o/72706899423" target="_blank" rel="noopener" class="btn btn-ghost on-dark">Browse all events</a>
-        <a href="mailto:hello@kiyawellbeing.com" class="btn btn-ghost on-dark">Email Kim</a>
+        <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free call</a>
+        <a href="https://www.eventbrite.com.au/o/72706899423" target="_blank" rel="noopener" class="btn btn-ghost">Browse all events</a>
+        <a href="mailto:hello@kiyawellbeing.com" class="btn btn-ghost">Email Kim</a>
       </div>
     </div>
   </div>
