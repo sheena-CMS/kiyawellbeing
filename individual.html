@@ -216,19 +216,19 @@
     ═══════════════════════════════════════ */
     .hero {
       padding: 7rem 0 6rem;
-      text-align: center;
+      text-align: left;
     }
     .hero h1 { margin-bottom: 1.25rem; }
     .hero .lead {
       font-size: 1.15rem;
       color: var(--muted);
-      max-width: 580px;
-      margin: 0 auto 2.25rem;
+      max-width: 540px;
+      margin: 0 0 2.25rem;
     }
     .hero-actions {
       display: flex;
       gap: 1rem;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
@@ -457,24 +457,24 @@
        DARK CTA
     ═══════════════════════════════════════ */
     .dark-cta {
-      text-align: center;
+      text-align: left;
     }
-    .dark-cta .section-label { color: var(--teal-bright); }
+    .dark-cta .section-label { color: var(--teal-deep); }
     .dark-cta h2 {
-      color: var(--on-dark);
+      color: var(--teal-deep);
       margin-bottom: 1rem;
     }
     .dark-cta .sub {
       font-size: 1.08rem;
-      color: var(--on-dark-muted);
-      max-width: 520px;
-      margin: 0 auto 2.25rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 0 2.25rem;
       line-height: 1.65;
     }
     .cta-actions {
       display: flex;
       gap: 1rem;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
@@ -608,8 +608,9 @@
   </nav>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero sec-warm">
-    <div class="container">
+  <section class="hero sec-warm" style="background:url(individual-hero.jpg) center 60%/cover no-repeat;position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(247,240,232,0.80);"></div>
+    <div class="container" style="position:relative;z-index:1;">
       <span class="section-label" data-aos="fade-up">Individual Sessions</span>
       <h1 data-aos="fade-up" data-aos-delay="80">Rest. Reset. Come home<br>to yourself.</h1>
       <p class="lead" data-aos="fade-up" data-aos-delay="160">Private 1:1 sessions designed to meet you exactly where you are — no experience needed, no pressure, just space to breathe.</p>
@@ -794,14 +795,19 @@
   </section>
 
   <!-- ═══ DARK CTA ═══ -->
-  <section class="dark-cta sec-dark">
-    <div class="container">
-      <span class="section-label" data-aos="fade-up">Get started</span>
-      <h2 data-aos="fade-up" data-aos-delay="80">Your first session starts with a conversation.</h2>
-      <p class="sub" data-aos="fade-up" data-aos-delay="160">Discovery calls are free — book a 15-minute chat to find the right session for you.</p>
-      <div class="cta-actions" data-aos="fade-up" data-aos-delay="240">
-        <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a free call</a>
-        <a class="btn btn-ghost-dark" href="mailto:kim@kiyawellbeing.com.au">Email Kim</a>
+  <section class="dark-cta" style="background:var(--warm);padding:clamp(56px,8vw,96px) 0;">
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;">
+      <div>
+        <span class="section-label" data-aos="fade-up">Get started</span>
+        <h2 data-aos="fade-up" data-aos-delay="80">Your first session starts with a conversation.</h2>
+        <p class="sub" data-aos="fade-up" data-aos-delay="160">Discovery calls are free — book a 15-minute chat to find the right session for you.</p>
+        <div class="cta-actions" data-aos="fade-up" data-aos-delay="240">
+          <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a free call</a>
+          <a class="btn" href="mailto:kim@kiyawellbeing.com.au" style="background:transparent;color:var(--teal-deep);border-color:var(--teal-deep);">Email Kim</a>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="120" style="border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 48px rgba(44,33,24,.12);">
+        <img src="individual-cta.jpg" alt="Kim Yates" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
       </div>
     </div>
   </section>
