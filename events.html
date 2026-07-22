@@ -217,6 +217,7 @@
     /* ─── Hero ─── */
     .hero {
       padding: clamp(72px, 10vw, 120px) 0 clamp(60px, 8vw, 100px);
+      text-align: left;
     }
     .hero-inner { max-width: 780px; }
     .hero h1 {
@@ -441,29 +442,28 @@
       color: var(--teal-deep);
     }
 
-    /* ─── Dark CTA ─── */
+    /* ─── CTA ─── */
     .sec-cta {
       padding: clamp(70px, 10vw, 110px) 0;
-      text-align: center;
+      text-align: left;
     }
-    .sec-cta .section-label { color: var(--teal-bright); }
+    .sec-cta .section-label { color: var(--teal-deep); }
     .sec-cta h2 {
-      color: var(--on-dark);
+      color: var(--teal-deep);
       font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 1rem;
     }
     .sec-cta p {
-      color: var(--on-dark-muted);
+      color: var(--muted);
       font-size: clamp(.95rem, 1.8vw, 1.1rem);
       max-width: 520px;
-      margin-inline: auto;
       margin-bottom: 2.25rem;
     }
     .cta-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     /* ─── Footer ─── */
@@ -785,7 +785,7 @@
 
 
 <!-- ─── 4. Dark CTA ─── -->
-<section class="sec-cta sec-dark">
+<section class="sec-cta sec-warm">
   <div class="container">
     <div data-aos="fade-up">
       <span class="section-label">Come as you are</span>
@@ -793,8 +793,8 @@
       <p>Discovery calls are free and there's no pressure — reach out to find the right event for you.</p>
       <div class="cta-buttons">
         <a class="btn btn-primary" href="https://calendly.com/kiyawellbeing" target="_blank" rel="noopener">Book a free call</a>
-        <a class="btn btn-ghost-dark" href="https://www.eventbrite.com.au/o/72706899423" target="_blank" rel="noopener">Browse all events</a>
-        <a class="btn btn-outline-dark" href="mailto:kim@kiyawellbeing.com.au">Email Kim</a>
+        <a class="btn" href="https://www.eventbrite.com.au/o/72706899423" target="_blank" rel="noopener" style="background:transparent;color:var(--teal-deep);border:2px solid var(--teal-deep);">Browse all events</a>
+        <a class="btn" href="mailto:kim@kiyawellbeing.com.au" style="background:transparent;color:var(--teal-deep);border:2px solid var(--teal-deep);">Email Kim</a>
       </div>
     </div>
   </div>
@@ -802,55 +802,21 @@
 
 
 <!-- ─── 5. Footer ─── -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="footer-logo" href="index.html">
-          <svg class="nav-lotus" viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="2.5" r="1.8" fill="currentColor"/>
-            <circle cx="15.5" cy="5.5" r="1.2" fill="currentColor"/>
-            <circle cx="28.5" cy="5.5" r="1.2" fill="currentColor"/>
-            <path d="M22 10C20 15.5 18 23 22 31C26 23 24 15.5 22 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M22 25C18 19 10 20 7 26C11.5 29 18.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M22 25C26 19 34 20 37 26C32.5 29 25.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M22 29C15.5 21 3 23 1 31.5C7.5 35 17 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M22 29C28.5 21 41 23 43 31.5C36.5 35 27 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <line x1="22" y1="31" x2="22" y2="44" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M22 40C17.5 35 10 37 8 42C12.5 43 19.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M22 40C26.5 35 34 37 36 42C31.5 43 24.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-          </svg>
-          Kiya <span>Wellbeing</span>
-        </a>
-        <p class="footer-tagline">Yin Yoga · Sound Healing · Reiki<br>Melbourne, Australia</p>
-      </div>
-
-      <div>
-        <p class="footer-nav-title">Navigate</p>
-        <ul class="footer-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="individual.html">Individual</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="corporate.html">Corporate</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="footer-nav-title">Connect</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/kiya_wellbeing" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @kiya_wellbeing
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kiya Wellbeing. All rights reserved.</p>
+<footer style="background:#1B6B5A;color:#fff;">
+  <div style="max-width:1100px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,5vw,40px);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;">
+    <div style="font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:18px;color:#fff;white-space:nowrap;">Kiya <span style="color:#2ECC9A;">Wellbeing</span></div>
+    <nav style="display:flex;gap:22px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html#about" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;font-weight:500;">About</a>
+      <a href="individual.html" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;font-weight:500;">Individual</a>
+      <a href="events.html" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;font-weight:500;">Events</a>
+      <a href="corporate.html" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;font-weight:500;">Corporate</a>
+      <a href="blog.html" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;font-weight:500;">Blog</a>
+    </nav>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;">@kiya_wellbeing</a>
     </div>
   </div>
+  <p style="text-align:center;color:rgba(255,255,255,0.5);font-size:14px;padding:0 0 28px;margin:0;">© 2026 Kiya Wellbeing · Kim Yates · Melbourne</p>
 </footer>
 
 
