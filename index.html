@@ -158,6 +158,8 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 .hero-pills-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:100%;margin-bottom:2px;}
 .hero-pill{font-size:13px;font-weight:600;color:var(--teal-deep);background:transparent;border:1.5px solid var(--teal-deep);border-radius:100px;padding:8px 16px;text-decoration:none;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;}
 .hero-pill:hover{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);}
+.hero-pill-dark{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);}
+.hero-pill-dark:hover{background:var(--teal-bright);border-color:var(--teal-bright);}
 
 /* Photo card */
 .photo-card{
@@ -241,7 +243,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
 /* ============ ABOUT ============ */
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,64px);align-items:center;}
-.about-photo{aspect-ratio:4/5;border-radius:24px;background:#d6ede7;overflow:hidden;border:3px solid var(--teal-deep);box-shadow:0 24px 48px rgba(44,33,24,.12);display:flex;align-items:center;justify-content:center;color:var(--teal-deep);opacity:.4;}
+.about-photo{aspect-ratio:4/5;border-radius:24px;background:#d6ede7;overflow:hidden;box-shadow:0 24px 48px rgba(44,33,24,.12);display:flex;align-items:center;justify-content:center;color:var(--teal-deep);}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center bottom;opacity:1;}
 .about-quote{font-size:clamp(1.1rem,2.3vw,1.35rem);font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:1.6rem;border-left:3px solid var(--accent);padding-left:1.1rem;}
 .stats-row{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,40px);margin-bottom:1.6rem;}
@@ -395,22 +397,14 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 <section class="sec" id="home" style="padding-top:clamp(56px,8vw,96px);background:url(hero.jpg) 15% center/cover no-repeat;position:relative;">
   <div style="position:absolute;inset:0;background:rgba(247,240,232,0.78);"></div>
   <div class="container" style="position:relative;z-index:1;">
-    <div class="hero-grid">
-      <div data-aos="fade-right" data-aos-duration="700">
-        <div class="label">Melbourne · In-studio · Corporate · Online</div>
-        <h1 class="reveal-lines">
-          <span class="reveal-line"><span>Move.</span></span>
-          <span class="reveal-line"><span><em>Breathe.</em></span></span>
-          <span class="reveal-line"><span>Come home to yourself.</span></span>
-        </h1>
-        <p class="hero-sub">Private yoga, meditation, reiki and corporate wellbeing — led by Kim Yates, a seasoned mindfulness facilitator with 10+ years of practice and 15 years of corporate experience.</p>
-        <div class="hero-pills">
-          <div class="hero-pills-label">Explore</div>
-          <a href="individual.html" class="hero-pill">Individual sessions</a>
-          <a href="events.html" class="hero-pill">Events &amp; workshops</a>
-          <a href="corporate.html" class="hero-pill">Corporate programs</a>
-        </div>
-      </div>
+    <div data-aos="fade-right" data-aos-duration="700">
+      <div class="label">Melbourne · In-studio · Corporate · Online</div>
+      <h1 class="reveal-lines">
+        <span class="reveal-line"><span>Move.</span></span>
+        <span class="reveal-line"><span><em>Breathe.</em></span></span>
+        <span class="reveal-line"><span>Come home to yourself.</span></span>
+      </h1>
+      <p class="hero-sub" style="max-width:32ch;">Private yoga, meditation, reiki and corporate wellbeing — led by Kim Yates, a seasoned mindfulness facilitator with 10+ years of practice.</p>
     </div>
 
     <div class="logo-strip" data-aos="fade-up" data-aos-delay="200">
@@ -418,6 +412,13 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
         <span>Yin Yoga</span><span>Mindfulness</span><span>Reiki</span><span>Meditation</span><span>Corporate Wellbeing</span><span>Retreats</span><span>Yoga Nidra</span><span>Breathwork</span><span>Sound Healing</span><span>Private Sessions</span>
         <span>Yin Yoga</span><span>Mindfulness</span><span>Reiki</span><span>Meditation</span><span>Corporate Wellbeing</span><span>Retreats</span><span>Yoga Nidra</span><span>Breathwork</span><span>Sound Healing</span><span>Private Sessions</span>
       </div>
+    </div>
+
+    <div class="hero-pills" style="padding:clamp(20px,3vw,32px) 0 0;" data-aos="fade-up" data-aos-delay="100">
+      <div class="hero-pills-label">Explore</div>
+      <a href="individual.html" class="hero-pill hero-pill-dark">Individual sessions</a>
+      <a href="events.html" class="hero-pill hero-pill-dark">Events &amp; workshops</a>
+      <a href="corporate.html" class="hero-pill hero-pill-dark">Corporate programs</a>
     </div>
   </div>
 </section>
