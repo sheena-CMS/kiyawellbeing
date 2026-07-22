@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual Sessions — Kiya Wellbeing</title>
+  <meta name="description" content="Private 1:1 sessions with Kim Yates — Reiki, Rest & Reset, and private yoga, meditation or breathwork. Meet you exactly where you are." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=fraunces@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    /* ─── Variables ─── */
+    :root {
+      --teal-bright: #2ECC9A;
+      --teal-deep:   #1B6B5A;
+      --rose:        #C4837A;
+      --ink:         #2C2118;
+      --warm:        #F4F0EB;
+      --white:       #ffffff;
+      --muted:       #7A6E65;
+      --faint:       #A69E95;
+      --line:        #E8DDD0;
+      --on-dark:     #F0E8DE;
+      --on-dark-muted: #C4B5A8;
+      --on-dark-faint: #9A8E84;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'General Sans', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Typography ─── */
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--teal-deep);
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 600; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; }
+    h3 { font-size: clamp(1.3rem, 2vw, 1.65rem); font-weight: 600; }
+
+    p { color: var(--muted); font-size: 1.05rem; }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'General Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      margin-bottom: 1rem;
+    }
+
+    /* ─── Layout helpers ─── */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .sec-warm  { background: var(--warm); }
+    .sec-light { background: var(--white); }
+    .sec-dark  { background: var(--teal-deep); }
+
+    section { padding: 6rem 0; }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-family: 'General Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      border: 2px solid transparent;
+      text-align: center;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--teal-deep);
+      color: #fff;
+    }
+    .btn-rose {
+      background: var(--rose);
+      color: #fff;
+    }
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--on-dark);
+      border-color: var(--on-dark-muted);
+    }
+    .btn-ghost-dark:hover { background: rgba(255,255,255,0.08); }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--teal-deep);
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--rose); }
+    .nav-lotus {
+      width: 20px;
+      height: 24px;
+      color: var(--teal-deep);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--teal-deep); }
+    .nav-links a.active {
+      font-weight: 600;
+      border-bottom: 2px solid var(--teal-bright);
+      padding-bottom: 2px;
+    }
+
+    .nav-cta { margin-left: 0.5rem; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal-deep);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile nav */
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 2rem 2rem;
+      gap: 1.25rem;
+    }
+    .nav-mobile a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .nav-mobile a.active { color: var(--teal-deep); font-weight: 600; }
+    .nav-mobile .btn { width: 100%; }
+
+    @media (max-width: 1080px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .nav-mobile.open { display: flex; }
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      padding: 7rem 0 6rem;
+      text-align: center;
+    }
+    .hero h1 { margin-bottom: 1.25rem; }
+    .hero .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 2.25rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ═══════════════════════════════════════
+       SERVICE CARDS
+    ═══════════════════════════════════════ */
+    .services-intro {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .services-intro h2 { margin-bottom: 0.75rem; }
+    .services-intro p { max-width: 520px; margin: 0 auto; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 960px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(44,33,24,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-accent-bar {
+      height: 6px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .accent-rose  { background: var(--rose); }
+    .accent-teal  { background: var(--teal-deep); }
+
+    .card-body {
+      padding: 2rem 1.75rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .label-rose { color: var(--rose); }
+    .label-teal { color: var(--teal-deep); }
+
+    .card-body h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    .h3-rose  { color: var(--rose) !important; }
+    .h3-teal  { color: var(--teal-deep) !important; }
+
+    .card-body .desc {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+    }
+
+    .card-detail-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-list {
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+    .card-list li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 0.25rem 0;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .card-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--teal-bright);
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .pricing-block {
+      background: var(--warm);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .pricing-block p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .pricing-block strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .card-cta { margin-top: auto; }
+    .card-cta .btn { width: 100%; }
+
+    /* ═══════════════════════════════════════
+       QUOTE / ABOUT
+    ═══════════════════════════════════════ */
+    .quote-section {
+      text-align: center;
+    }
+    .quote-section blockquote {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      color: var(--teal-deep);
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 740px;
+      margin: 0 auto 1.75rem;
+      position: relative;
+    }
+    .quote-section blockquote::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--teal-bright);
+      line-height: 0;
+      vertical-align: -1.2rem;
+      margin-right: 0.15em;
+      font-family: Georgia, serif;
+    }
+    .quote-section blockquote::after {
+      content: '\201D';
+      font-size: 4rem;
+      color: var(--teal-bright);
+      line-height: 0;
+      vertical-align: -1.2rem;
+      margin-left: 0.1em;
+      font-family: Georgia, serif;
+    }
+    .quote-attr {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .quote-section .bio {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════ */
+    .testimonials-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .testimonials-intro h2 { margin-bottom: 0.5rem; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    @media (max-width: 860px) {
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 12px rgba(44,33,24,0.06);
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+    .stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--teal-bright);
+    }
+    .testimonial-card .quote-text {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-author strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .testimonial-author span {
+      font-size: 0.82rem;
+      color: var(--faint);
+    }
+
+    /* ═══════════════════════════════════════
+       DARK CTA
+    ═══════════════════════════════════════ */
+    .dark-cta {
+      text-align: center;
+    }
+    .dark-cta .section-label { color: var(--teal-bright); }
+    .dark-cta h2 {
+      color: var(--on-dark);
+      margin-bottom: 1rem;
+    }
+    .dark-cta .sub {
+      font-size: 1.08rem;
+      color: var(--on-dark-muted);
+      max-width: 520px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.65;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    .site-footer {
+      background: var(--ink);
+      padding: 4rem 0 2.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 700px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--on-dark);
+      margin-bottom: 0.75rem;
+    }
+    .footer-logo .nav-lotus { color: var(--teal-bright); }
+    .footer-logo span { color: var(--rose); }
+    .footer-tagline {
+      font-size: 0.9rem;
+      color: var(--on-dark-muted);
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-family: 'General Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--on-dark-faint);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.55rem; }
+    .footer-col ul a {
+      font-size: 0.93rem;
+      color: var(--on-dark-muted);
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--teal-bright); }
+
+    .footer-social {
+      font-size: 0.95rem;
+      color: var(--on-dark-muted);
+    }
+    .footer-social a {
+      color: var(--teal-bright);
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .footer-social a:hover { opacity: 0.8; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-bottom p {
+      font-size: 0.83rem;
+      color: var(--on-dark-faint);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <svg class="nav-lotus" viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="2.5" r="1.8" fill="currentColor"/>
+          <circle cx="15.5" cy="5.5" r="1.2" fill="currentColor"/>
+          <circle cx="28.5" cy="5.5" r="1.2" fill="currentColor"/>
+          <path d="M22 10C20 15.5 18 23 22 31C26 23 24 15.5 22 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M22 25C18 19 10 20 7 26C11.5 29 18.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M22 25C26 19 34 20 37 26C32.5 29 25.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M22 29C15.5 21 3 23 1 31.5C7.5 35 17 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M22 29C28.5 21 41 23 43 31.5C36.5 35 27 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <line x1="22" y1="31" x2="22" y2="44" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M22 40C17.5 35 10 37 8 42C12.5 43 19.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M22 40C26.5 35 34 37 36 42C31.5 43 24.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        Kiya <span>Wellbeing</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="individual.html" class="active" aria-current="page">Individual</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="corporate.html">Corporate</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+
+      <a class="btn btn-primary nav-cta" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Talk to Kim</a>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="mobileMenu" role="menu">
+      <a href="index.html#about">About</a>
+      <a href="individual.html" class="active">Individual</a>
+      <a href="events.html">Events</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="blog.html">Blog</a>
+      <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Talk to Kim</a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero sec-warm">
+    <div class="container">
+      <span class="section-label" data-aos="fade-up">Individual Sessions</span>
+      <h1 data-aos="fade-up" data-aos-delay="80">Rest. Reset. Come home<br>to yourself.</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="160">Private 1:1 sessions designed to meet you exactly where you are — no experience needed, no pressure, just space to breathe.</p>
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="240">
+        <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICE CARDS ═══ -->
+  <section class="sec-light">
+    <div class="container">
+      <div class="services-intro" data-aos="fade-up">
+        <span class="section-label">What's on offer</span>
+        <h2>Three ways to work with Kim.</h2>
+        <p>Each session is different — and that's the point. Choose the format that calls to you, or reach out and Kim will help you find the right fit.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Card 1: Reiki -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="card-accent-bar accent-rose"></div>
+          <div class="card-body">
+            <span class="card-label label-rose">Energy healing</span>
+            <h3 class="h3-rose">1:1 Reiki</h3>
+            <p class="desc">Reiki is an ancient Japanese healing practice that works with the body's energy systems to promote deep relaxation and restore balance. Kim is a trained Reiki practitioner who creates a safe, calming space for each session — fully clothed, gentle, and profoundly restorative.</p>
+
+            <p class="card-detail-label">What to expect</p>
+            <p class="desc">A deeply relaxing session where Kim uses light touch or hands hovering above the body to clear energy blockages and support your nervous system. Many clients experience a sense of calm, emotional release, or deep sleep during the session.</p>
+
+            <div class="pricing-block">
+              <p class="card-detail-label" style="margin-bottom:0.4rem;">Duration &amp; pricing</p>
+              <p>
+                <strong>60 min</strong> — from $100<br>
+                <strong>90 min</strong> — from $150
+              </p>
+            </div>
+
+            <div class="card-cta">
+              <a class="btn btn-rose" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a session</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Rest & Reset -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-accent-bar accent-teal"></div>
+          <div class="card-body">
+            <span class="card-label label-teal">Signature session</span>
+            <h3 class="h3-teal">Rest &amp; Reset Experience</h3>
+            <p class="desc">Kim's signature 2-hour immersive experience — designed for when you need more than a single modality. This is a full nervous system reset combining the best of what Kim offers into one nourishing session.</p>
+
+            <p class="card-detail-label">What's included</p>
+            <ul class="card-list" style="margin-bottom:1.25rem;">
+              <li>Guided breathwork</li>
+              <li>Meditation</li>
+              <li>Yin yoga</li>
+              <li>Reiki</li>
+              <li>Optional sound healing</li>
+            </ul>
+
+            <div class="pricing-block">
+              <p class="card-detail-label" style="margin-bottom:0.4rem;">Duration &amp; pricing</p>
+              <p>
+                <strong>2 hrs</strong> · Price on enquiry
+              </p>
+            </div>
+
+            <div class="card-cta">
+              <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Enquire about this session</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Private Yoga etc -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-accent-bar accent-rose"></div>
+          <div class="card-body">
+            <span class="card-label label-rose">Private sessions</span>
+            <h3 class="h3-rose">Private Yoga, Meditation or Breathwork</h3>
+            <p class="desc">One-on-one sessions shaped entirely around you. Whether you're new to yoga and want to learn the basics, deepening an existing practice, or looking for a dedicated meditation or breathwork coach — Kim meets you where you are.</p>
+
+            <p class="card-detail-label">Modalities</p>
+            <ul class="card-list" style="margin-bottom:1.25rem;">
+              <li>Yin yoga</li>
+              <li>Yoga nidra</li>
+              <li>Mixed flow yoga</li>
+              <li>Mindfulness meditation</li>
+              <li>Breath awareness</li>
+              <li>Visualisation</li>
+            </ul>
+
+            <div class="pricing-block">
+              <p class="card-detail-label" style="margin-bottom:0.4rem;">Duration &amp; pricing</p>
+              <p>
+                <strong>45 min</strong> — from $80<br>
+                <strong>60 min</strong> — from $100<br>
+                <strong>Meditation 30 min</strong> — from $60<br>
+                <strong>Meditation 45 min</strong> — from $80
+              </p>
+            </div>
+
+            <div class="card-cta">
+              <a class="btn btn-rose" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a session</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUOTE / ABOUT ═══ -->
+  <section class="quote-section sec-warm">
+    <div class="container">
+      <blockquote data-aos="fade-up">
+        I work with you, not at you. Every session is shaped around where you are on that day — not a script, not a formula.
+      </blockquote>
+      <p class="quote-attr" data-aos="fade-up" data-aos-delay="80">— Kim Yates, Kiya Wellbeing</p>
+      <p class="bio" data-aos="fade-up" data-aos-delay="160">Kim Yates has 10+ years of practice across yoga, meditation, reiki and breathwork. She holds space that is calm, grounded, and compassionate — no wellness jargon, no pressure.</p>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="sec-light">
+    <div class="container">
+      <div class="testimonials-intro" data-aos="fade-up">
+        <span class="section-label">What clients say</span>
+        <h2>In their own words.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="stars" aria-label="5 stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="quote-text">"Kim's knowledge and passion for wellness is incredibly contagious. She has a warm, embracing and deeply empathetic style. I appreciate every interaction I've had with Kim."</p>
+          <div class="testimonial-author">
+            <strong>Danica Cooney</strong>
+            <span>Meditation student</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars" aria-label="5 stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="quote-text">"Kim has a beautiful, calming presence that relaxes the group and makes everyone feel welcome. Her Yin and Pin sessions with Dr Suzy are incredible!"</p>
+          <div class="testimonial-author">
+            <strong>Emma Power</strong>
+            <span>Yin.Pin.Sound attendee</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars" aria-label="5 stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.31L10 13.27l-4.78 2.42.91-5.31L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="quote-text">"I really enjoyed my reiki with Kim — she was professional, calm and gentle and provided a lovely relaxing session addressing the areas of need. Definitely recommend!"</p>
+          <div class="testimonial-author">
+            <strong>Amanda</strong>
+            <span>Reiki client</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DARK CTA ═══ -->
+  <section class="dark-cta sec-dark">
+    <div class="container">
+      <span class="section-label" data-aos="fade-up">Get started</span>
+      <h2 data-aos="fade-up" data-aos-delay="80">Your first session starts with a conversation.</h2>
+      <p class="sub" data-aos="fade-up" data-aos-delay="160">Discovery calls are free — book a 15-minute chat to find the right session for you.</p>
+      <div class="cta-actions" data-aos="fade-up" data-aos-delay="240">
+        <a class="btn btn-primary" href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener">Book a free call</a>
+        <a class="btn btn-ghost-dark" href="mailto:kim@kiyawellbeing.com.au">Email Kim</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-logo">
+            <svg class="nav-lotus" viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="22" cy="2.5" r="1.8" fill="currentColor"/>
+              <circle cx="15.5" cy="5.5" r="1.2" fill="currentColor"/>
+              <circle cx="28.5" cy="5.5" r="1.2" fill="currentColor"/>
+              <path d="M22 10C20 15.5 18 23 22 31C26 23 24 15.5 22 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 25C18 19 10 20 7 26C11.5 29 18.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 25C26 19 34 20 37 26C32.5 29 25.5 27 22 25Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 29C15.5 21 3 23 1 31.5C7.5 35 17 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 29C28.5 21 41 23 43 31.5C36.5 35 27 32 22 29Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="22" y1="31" x2="22" y2="44" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M22 40C17.5 35 10 37 8 42C12.5 43 19.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 40C26.5 35 34 37 36 42C31.5 43 24.5 41 22 40Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            Kiya <span>Wellbeing</span>
+          </div>
+          <p class="footer-tagline">Yoga · Meditation · Reiki · Breathwork<br>Helping you come home to yourself.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="individual.html">Individual</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Follow along</h4>
+          <p class="footer-social">
+            Instagram: <a href="https://instagram.com/kiya_wellbeing" target="_blank" rel="noopener">@kiya_wellbeing</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Kiya Wellbeing by Kim Yates. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
+</body>
+</html>
