@@ -92,13 +92,13 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 /* ============ HERO ============ */
 .corp-hero{padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px);}
 .corp-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);align-items:center;}
-.corp-hero h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:1.25rem;color:var(--teal-deep);}
-.corp-hero h1 em{color:var(--teal-bright);font-style:normal;}
+.corp-hero h1{font-size:clamp(1.5rem,3.5vw,2.75rem);margin-bottom:1.25rem;color:var(--teal-deep);font-style:italic;}
+.corp-hero h1 em{color:var(--teal-deep);font-style:normal;}
 .corp-hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted);max-width:50ch;margin-bottom:2rem;line-height:1.7;}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
 
 /* Stats panel */
-.stats-panel{
+.stats-panel{background:rgba(27,107,90,.08);border:1px solid rgba(27,107,90,.15);
   background:var(--warm);border:1px solid rgba(44,33,24,.12);border-radius:22px;padding:2rem 1.75rem;
   box-shadow:0 24px 48px rgba(0,0,0,.3),inset 0 1px 0 rgba(240,232,222,.06);
   animation:float 5s ease-in-out infinite;
@@ -106,9 +106,9 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 .stats-panel-label{font-family:'Fraunces',sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
-.stat-box{background:var(--white);border:2px solid rgba(44,33,24,.18);border-radius:14px;padding:1.5rem 1.25rem;box-shadow:0 4px 14px rgba(44,33,24,.08);}
-.stat-box-num{font-family:'Fraunces',sans-serif;font-weight:700;font-size:3.5rem;color:var(--ink);line-height:1;}
-.stat-box-lbl{font-size:15px;color:var(--ink);margin-top:.6rem;line-height:1.4;}
+.stat-box{background:transparent;border:1.5px solid var(--teal-deep);border-radius:14px;padding:1.25rem 1.25rem;opacity:.85;}
+.stat-box-num{font-family:'Fraunces',sans-serif;font-weight:700;font-size:2rem;color:var(--teal-deep);line-height:1;}
+.stat-box-lbl{font-size:14px;color:var(--muted);margin-top:.5rem;line-height:1.4;}
 .stat-divider{grid-column:1/-1;height:1px;background:rgba(44,33,24,.1);}
 .stat-industries{font-size:13px;color:var(--muted);line-height:1.6;}
 .stat-industries strong{color:var(--ink);font-weight:600;}
@@ -173,12 +173,12 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
 
 /* ============ CTA BOX ============ */
 .cta-box{
-  background:var(--teal-deep);border-radius:24px;
+  background:#2e8b6e;border-radius:24px;
   padding:clamp(40px,6vw,64px);text-align:center;
 }
 .cta-box h2{color:#fff;margin-bottom:1rem;}
 .cta-box p{color:rgba(255,255,255,0.8);font-size:17px;max-width:52ch;margin:0 auto 2rem;line-height:1.7;}
-.cta-box .label{color:var(--teal-bright);}
+.cta-box .label{color:rgba(255,255,255,0.7);}
 .cta-box .btn-primary{background:#fff;color:var(--teal-deep);}
 .cta-box .btn-ghost{color:#fff;border-color:rgba(255,255,255,0.6);}
 .cta-box .btn-ghost:hover{background:#fff;color:var(--teal-deep);}
@@ -273,8 +273,8 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
     <div class="corp-hero-grid">
       <div data-aos="fade-right" data-aos-duration="700">
         <div class="label">Corporate wellbeing</div>
-        <h1>Wellbeing at work,<br>done <em>properly.</em></h1>
-        <p class="corp-hero-sub">Kim Yates brings 15 years of corporate experience and 10+ years of mindfulness practice to your organisation — not a generic wellness package, but a program built around your team's actual needs.</p>
+        <h1>Workplace wellbeing that helps people <em>and</em> business thrive.</h1>
+        <p class="corp-hero-sub">Creating healthier, happier, more connected workplaces — built around your team's actual culture and goals.</p>
         <div class="hero-btns">
           <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a free consultation</a>
           <a href="#offerings" class="btn btn-ghost">See what's included</a>
@@ -285,12 +285,12 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
           <div class="stats-panel-label">Kim's background</div>
           <div class="stats-grid">
             <div class="stat-box">
-              <div class="stat-box-num" data-count="15" data-suffix="">0</div>
-              <div class="stat-box-lbl">years in corporate roles</div>
+              <div class="stat-box-num" data-count="15" data-suffix=" Years">0</div>
+              <div class="stat-box-lbl">in corporate roles</div>
             </div>
             <div class="stat-box">
-              <div class="stat-box-num" data-count="10" data-suffix="+">0</div>
-              <div class="stat-box-lbl">years of mindfulness practice</div>
+              <div class="stat-box-num" data-count="20" data-suffix=" Years">0</div>
+              <div class="stat-box-lbl">of mindfulness practice</div>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-industries" style="grid-column:1/-1;">
@@ -489,8 +489,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <h2>Let's design something that actually works for your team.</h2>
       <p>Book a free 30-minute consultation — no obligation, no pitch. Just a conversation about what your team needs and whether Kiya Wellbeing is the right fit.</p>
       <div class="hero-btns" style="justify-content:center;">
-        <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a consultation</a>
-        <a href="mailto:kim@kiyawellbeing.com.au" class="btn btn-ghost">Email Kim</a>
+        <a href="https://calendly.com/kiyawellbeingbykimyates/reiki-session-in-person-1hour" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>
       </div>
       <p style="margin-top:1.5rem;font-size:14px;color:rgba(255,255,255,0.6);">Programs priced on application</p>
     </div>
@@ -514,7 +513,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:1.5rem;}
       <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" class="ig-tile" aria-label="View on Instagram"><div class="ig-overlay"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div></a>
     </div>
     <div style="text-align:center;margin-top:clamp(28px,4vw,40px);" data-aos="fade-up">
-      <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" class="btn btn-primary-ink">Follow on Instagram</a>
+      <a href="https://www.instagram.com/kiya_wellbeing/" target="_blank" rel="noopener" class="btn btn-primary">Follow on Instagram</a>
     </div>
   </div>
 </section>
